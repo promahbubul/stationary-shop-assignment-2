@@ -1,6 +1,17 @@
 # Stationary Shop API Documentation .-.
 
-This is an stationary shop api documentation. After reading this documentation you easily use this api in you frontend application.
+This is an stationary shop api documentation. Using this api you can preform `CRUD` operation of stationary whop.
+After reading this documentation you easily use this api in you frontend application.
+
+## Features
+
+- Create a stationary product
+- Delete a stationary product
+- Update a stationary product
+- Get a stationary product
+- Get All product of Stationary
+- Order create any product
+- Get Order Total revenue
 
 ## Technology Used:
 
@@ -82,7 +93,7 @@ baseURL/api/products/:productId
 
 all time `baseURL/your-api-url`. Base url is given top
 
-### 1. Order a Product
+### 6. Order a Product
 
 ```
 baseURL/api/orders
@@ -99,7 +110,7 @@ baseURL/api/orders
 }
 ```
 
-### 1. Show Order Total Revenue
+### 7. Show Order Total Revenue
 
 ```
 baseURL/api/orders
