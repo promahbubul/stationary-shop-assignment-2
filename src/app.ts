@@ -16,7 +16,7 @@ app.use('/api/orders', orderRouter);
 app.get('/', (req: Request, res: Response) => {
   res.json({
     success: true,
-    message: 'Stationary Shop Server working. .-.',
+    message: 'Stationary Shop Server working. ._.',
   });
 });
 

@@ -9,24 +9,24 @@ const createAnOrder = async (req: Request, res: Response) => {
     const productData = await Product.findById(product);
 
     if (!productData) {
-      res.json({ message: 'Product not found', success: false });
-    } else if ((productData as TProduct).quantity < quantity) {
-      res.json({ message: 'Insufficient stock', success: false });
-    } else {
-      (productData as TProduct).quantity -= quantity;
-
-      if ((productData as TProduct).quantity === 0)
-        (productData as TProduct).inStock = false;
-
-      const totalPrice = (productData as TProduct).price * quantity;
-      const order = { email, product, quantity, totalPrice };
-      const result = await orderService.createOrder(order);
-      res.json({
-        message: 'Order created successfully',
-        status: true,
-        data: result,
-      });
+      throw new Error('Product not found');
     }
+    if ((productData as TProduct).quantity < quantity) {
+      throw new Error('Insufficient stock');
+    }
+    (productData as TProduct).quantity -= quantity;
+
+    if ((productData as TProduct).quantity === 0)
+      (productData as TProduct).inStock = false;
+
+    const totalPrice = (productData as TProduct).price * quantity;
+    const order = { email, product, quantity, totalPrice };
+    const result = await orderService.createOrder(order);
+    res.json({
+      message: 'Order created successfully',
+      status: true,
+      data: result,
+    });
   } catch (error) {
     res.json({
       message: 'Something went wrong',

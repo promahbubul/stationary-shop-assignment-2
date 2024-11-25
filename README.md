@@ -31,7 +31,7 @@ Two type of api are build `Product` and `Order`
 - Base URL is
 
   ```
-  https://stationary-shop-assignment-promahbubul-promahbubuls-projects.vercel.app
+  https://stationary-shop-assignment.vercel.app/
   ```
 
 ## Product API
